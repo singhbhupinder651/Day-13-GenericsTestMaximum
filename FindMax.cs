@@ -6,34 +6,28 @@ using System.Threading.Tasks;
 
 namespace FindMaximum
 {
-    internal class FindMax<T> where T : IComparable
+    internal class FindMax
     {
-        public T[] Value;
 
-        public FindMax(params T[] value)
+        public T FindMaxAll<T>(T First, T Second, T Third) where T : IComparable
         {
-            this.Value = value;
+
+            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
+            {
+                return First;
+            }
+            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
+            {
+                return Second;
+            }
+            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
+            {
+                return Third;
+            }
+            return default;
+
         }
-        public T[] Sort(T[] values)//Method to sort Array Element
-        {
-            Array.Sort(values);
-            return values;
-        }
-        public T MaxValue(T[] values)
-        {
-            var sorted_Values = Sort(values);
-            return sorted_Values[^1];
-        }
-        public T Maxmethod()
-        {
-            var max = MaxValue(this.Value);
-            return max;
-        }
-        public void PrintMaxValue()
-        {
-            var max = MaxValue(this.Value);
-            Console.WriteLine("Maximum Value is :  " + max);
-        }
+
 
     }
 
