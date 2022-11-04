@@ -3,18 +3,19 @@
     class Program
     {
         public static void Main(string[] args)
-        {     
+        {
+
+            FindMax findMax = new FindMax();
+
             //maximum integer
-            FindMax<int> obj = new FindMax<int>(22, 54, 62, 87, 32);
-            obj.PrintMaxValue();
+            int result = findMax.FindMaxInteger(150, 100, 5);
+            Console.WriteLine("Greatest number among three numbers is : " + result);
 
             //maximum float
-            FindMax<float> objf = new FindMax<float>(22.6f, 122.8f, 22.6f, 65.6f, 65.9f);
-            objf.PrintMaxValue();
+            float result1 = findMax.FindMaxFloat(322.3f, 433.7f, 683.2f);
+            Console.WriteLine("\nGreatest number among three Float Numbers is : " + result1);
 
-            //find maximum string
-            FindMax<string> objs = new FindMax<string>("zApple", "Peach", "Banana", "Mango", "Stewberry");
-            objs.PrintMaxValue();
+
 
         }
     }
