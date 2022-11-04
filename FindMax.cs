@@ -29,11 +29,6 @@ namespace FindMaximum
             var max = MaxValue(this.Value);
             return max;
         }
-        public void PrintMaxValue()
-        {
-            var max = MaxValue(this.Value);
-            Console.WriteLine("Maximum Value is :  " + max);
-        }
 
     }
 
