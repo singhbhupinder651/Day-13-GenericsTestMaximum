@@ -8,33 +8,34 @@ namespace FindMaximum
 {
     internal class FindMax<T> where T : IComparable
     {
-        public T[] Value;
+        private T First;
+        private T Second;
+        private T Third;
 
-        public FindMax(params T[] value)
+        public FindMax(T a, T b, T c)
         {
-            this.Value = value;
+            First = a;
+            Second = b;
+            Third = c;
         }
-        public T[] Sort(T[] values)//Method to sort Array Element
+        public T FindMaxShow()
         {
-            Array.Sort(values);
-            return values;
-        }
-        public T MaxValue(T[] values)
-        {
-            var sorted_Values = Sort(values);
-            return sorted_Values[^1];
-        }
-        public T Maxmethod()
-        {
-            var max = MaxValue(this.Value);
-            return max;
-        }
-        public void PrintMaxValue()
-        {
-            var max = MaxValue(this.Value);
-            Console.WriteLine("Maximum Value is :  " + max);
-        }
 
+            if (First.CompareTo(Second) > 0 && First.CompareTo(Third) > 0)
+            {
+                return First;
+            }
+            if (Second.CompareTo(First) > 0 && Second.CompareTo(Third) > 0)
+            {
+                return Second;
+            }
+            if (Third.CompareTo(First) > 0 && Third.CompareTo(Second) > 0)
+            {
+                return Third;
+            }
+            return default;
+
+        }
     }
 
 }
